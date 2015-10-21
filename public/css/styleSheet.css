@@ -1,0 +1,219 @@
+
+
+/* Makeshift CSS Reset */
+{
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Tell the browser to render HTML 5 elements as block */
+header, footer, aside, nav, article {
+    display: block;
+}
+ 
+body {
+    margin-left:auto;
+    margin-right:auto;
+    width: 940px;
+    font: 13px/22px Helvetica, Arial, sans-serif;
+    background: #f0f0f0;
+}
+ 
+h2 {
+    font-size: 28px;
+    line-height: 44px;
+    padding: 22px 0;
+
+}
+ 
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 11px 0;
+}
+ 
+p {
+    padding-bottom: 32px;
+    color:#467612;
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: url("../image/15.jpg");
+}
+
+nav ul {
+    margin: 0 auto;
+    width: 940px;
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+}
+ 
+nav ul li a {
+    display: block;
+    margin-right: 20px;
+    width: 140px;
+    font-size: 14px;
+    line-height: 44px;
+    text-align: center;
+    text-decoration: none;
+    color: #777;
+}
+ 
+nav ul li a:hover {
+    color: #fff;
+}
+ 
+nav ul li.selected a {
+    color: #fff;
+}
+
+#intro {
+    margin-top: 66px;
+    padding: 44px;
+    background: url("../image/mh8xMJ7KU0xaXLdshPxl5bw.jpg") repeat-x;
+
+    /* Background-size not implemented yet */
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    -khtml-background-size: 100%;
+ 
+    /* Border-radius not implemented yet  #fff   #d9f499*/
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+}
+
+#intro h2, #intro p¬†{
+    width: 336px;
+}
+ 
+#intro h2 {
+    padding: 0 0 22px 0;
+    font-weight: normal;
+    color: #FF0000;
+    
+}
+ 
+#intro p {
+    padding: 0;
+    color: #467612;
+}
+
+#content {
+    display: table;
+}
+ 
+    #mainContent {
+        display: table-cell;
+        width: 620px;
+        padding-right: 22px;
+    }
+ 
+    aside {
+        display: table-cell;
+        width: 300px;
+    }
+
+/*.blogPost {
+    column-count: 2;
+    column-gap: 22px;
+}
+ 
+    .blogPost header {
+        column-span: all;
+    }*/
+
+.blogPost div {
+    /* Column-count not implemented yet */
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+ 
+    /* Column-gap not implemented yet */
+    -moz-column-gap: 22px;
+    -webkit-column-gap: 22px;
+}
+
+.blogPost img {
+    margin: 22px 0;
+    -webkit-box-shadow: 3px 3px 7px #777;
+}
+
+section#comments article:nth-child(2n+1) {
+    padding: 21px;
+    background: #E3E3E3;
+    border: 1px solid #d7d7d7;
+    
+    /* Border-radius not implemented yet */
+    -moz-border-radius: 11px;
+    -webkit-border-radius: 11px;
+}
+
+a{
+  display:block;
+  
+  position:relative;
+  -webkit-backface-visibility: hidden;
+  transition: all 300ms ease;
+}
+a:hover{
+  transform:scale(1.06) rotatex(20deg);
+  box-shadow: 0px 18px 25px -2px rgba(0,0,0,0.2); 
+}
+a:hover .icon-bottom, a:hover .wave:nth-child(odd){
+  background:#ffac3d;
+}
+a:hover .icon-corner{
+  border-color: transparent transparent #ffac3d;
+}
+
+
+nav ul li.subscribe {
+    margin:auto;
+    padding: 8px;
+    background: url("../image/rss_icon_small.png") left center no-repeat;
+    
+}
+
+
+
+
+#container {
+    width: 674px;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#body {
+    height:100%;
+    width: 616px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    margin: 44;
+    background:#6cf; 
+}
+
+.footer-right > div {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-left > div {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
