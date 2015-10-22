@@ -47,6 +47,11 @@ app.get('/myStore',function(req,res){
   res.render("myStore")
 });
 
+app.get('/about',function(req,res){
+
+  res.render("about")
+});
+
 var server = app.listen(3000, function(){
   console.log("server is running on " + server.address().address + ":" +server.address().port)
 

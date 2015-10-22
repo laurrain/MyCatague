@@ -10,6 +10,7 @@
 header, footer, aside, nav, article {
     display: block;
 }
+
  
 body {
     margin-left:auto;
@@ -208,7 +209,7 @@ nav ul li.subscribe {
 
 .footer-right > div {
     float: right;
-    margin: 0;
+    margin: 15;
     padding: 0;
 }
 
