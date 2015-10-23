@@ -52,6 +52,16 @@ app.get('/about',function(req,res){
   res.render("about")
 });
 
+app.get('/contact',function(req,res){
+
+  res.render("contact")
+});
+
+app.get('/subscribe',function(req,res){
+
+  res.render("subscribe")
+});
+
 var server = app.listen(3000, function(){
   console.log("server is running on " + server.address().address + ":" +server.address().port)
 

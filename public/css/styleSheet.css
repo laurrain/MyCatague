@@ -180,7 +180,7 @@ nav ul li.subscribe {
     
 }
 
-section#img{
+#img{
     width: 100%;
     height: 50px;
     margin: auto;
@@ -189,7 +189,7 @@ section#img{
     min-height: 50px;
 }
 
-section#about {
+#about {
     width: 100%;
     height: 550px;
     margin: auto;
@@ -197,24 +197,119 @@ section#about {
     margin-top: 100px;
     min-height: 550px;
 }
-div.local {
+.local {
     width: 265px;
     float: left;
     margin-top: -20px;
 }
-div.shipping {
+.shipping {
     width: 310px;
     margin-left: 25%;
     height: 350px;
     margin-top: -80px;
 }
-div.return {
+.return {
     width: 310px;
     margin-left: 55%;
     height: 350px;
     margin-top: -80px;
 }
 
+#contact{
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    margin-top: 120px;
+}
+
+#feedWidget{
+    background:url(../image/2423741-t-THUMBNAIL.jpg) repeat-x #47525c;
+    border:2px solid #48535e;
+    margin:0 auto;
+    width: 950px;
+    height: 550px;
+    margin-top: 120px;
+    padding:5px;
+    position:relative;
+
+    /* Remains hidden if JS is not enabled: */
+    display:none;
+    z-index:20;
+}
+
+#activeTab.hover,.dropDownList{
+    background:url(../image/autogen_small_35730377_bedding.jpg) no-repeat 95% 50% #47525c;
+    border:1px solid #38434d;
+
+    margin:-1px;
+
+    cursor:pointer;
+
+    /* CSS3 round corners: */
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+
+}
+
+#activeTab,.dropDownList div{
+    color:white;
+    cursor:pointer;
+    font-size:20px;
+    margin:0 2px 0 0;
+    padding:5px;
+
+    text-shadow:0 1px 1px black;
+}
+
+.line{
+    height:1px;
+    overflow:hidden;
+    background-color:#2b353d;
+    border-bottom:1px solid #687581;
+    margin:10px 0;
+}
+
+.dropDownList{
+    background-image:none;
+    position:absolute;
+
+    border-top:none;
+    padding:5px;
+
+    /* We reset the roundness of the top corners, inherited by a previous rule: */
+
+    -moz-border-radius-topleft: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dropDownList div:hover{
+    background-color:#505e6b;
+}
+
+#tabContent div{
+    /* The feed entry divs */
+
+    background-color:#EEEEEE;
+    color:#555555;
+    font-size:10px;
+    margin-bottom:10px;
+    padding:5px;
+    position:relative;
+
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+
+    /* CSS3 box shadow: */
+    -moz-box-shadow:0 1px 1px black;
+    -webkit-box-shadow:0 1px 1px black;
+    box-shadow:0 1px 1px black;
+}
 
 #container {
     width: 674px;
