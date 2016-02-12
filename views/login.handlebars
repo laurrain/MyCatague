@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <title>Mystore</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styleSheet.css">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<!--hovering over the images will pause the slideshow -->
+<div class="one">
+    <div>
+        <table class = "table">
+            <tr>
+                <td><a href="/">home</a></td>
+            </tr>
+            <tr>
+                <td><a href="/login">Member Area</a></td>
+            </tr>
+            <tr>
+                <td><a href="/about">About Us</a></td>
+            </tr>
+            <tr>
+                <td><a href="/myStore">Stores</a></td>
+            </tr>
+            <tr>
+                <td><a href="/contact">Contact</a></td>
+            </tr>
+        </table>
+    </div><br>
+      
+      
+        <section class="slideshow">
+       	   <div class="slideshow-container slide">
+    		<img src="../image/images (13).jpg"/>
+    		<img src="../image/images (21).jpg"/>
+    		<img src="../image/images.jpg"/>
+  	      </div>
+        </section>
+      </div>
+      
+
+<div class="col-sm-6 col-sm-offset-3">
+<div class="nav navbar navbar-default navbar-fixed-top">
+    <a href="/"><h1>Welcome To Tchebayou Store</h1></a>
+</div>
+
+
+    <!-- form container -->
+    <div class="form-container">
+        <!-- form header -->
+        <h1 class="form-header heading-color">Sign In</h1>
+        <!-- end of form header -->
+        <!-- form content -->
+        <form class="form-content"  action="/login" method="POST">
+            <fieldset>
+                <input type="text" class="form-control" name="username" placeholder="Username" value="{{username}}"autofocus=""/>
+                <input type="text" class="form-control" name="password" placeholder="Password" value="{{password}}" required="">
+                 {{#if message}}
+                <p>{{message}}</p>
+                {{/if}}
+                <input type="submit" value="Submit" class="form-submit-control" />
+            </fieldset>
+        </form>
+        <hr>
+
+			<form class="form-signin" action="/register" method="GET">
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                                Register
+                                        </button>
+         		</form>
+            </div>
+			</div>
+		</div>
+	</body>

@@ -1,21 +1,9 @@
-/*myStore css
-html{
-  background: #aaa; 
-}*/
-body{
-  width: 100%;
-  height: 100%;
-}
-
-
-/* SLIDER STRUCTURE */
-
 #slider {
    margin: 70px auto 0;
    position: relative;
-   overflow: visible;
+   overflow: hidden;
    height: 625px;
-   width: 100%;
+   width: 500px;
    border: 2px;
    box-shadow: 0px 0px 0px rgba(0,0,0,0.7);
 }
@@ -23,15 +11,14 @@ body{
 /* IMAGE LIST */
 
 #slider ul {
-   margin: 0;
-   padding: 0;
+   
+   padding: 0px;
    position: relative;
 }
 
 #slider li {
-   
    position: absolute;
-   right: -225px; /* Original Position - Outside of the Slider */
+   right: -25px; /* Original Position - Outside of the Slider */
    list-style: none;
 }
 
@@ -55,14 +42,18 @@ body{
    animation: cyclefive 25s linear infinite;
 }
 
+#slider li.sixthanimation {
+   animation: cyclesix 25s linear infinite;
+}
+
 /* ANIMATION */
 
-@keyframes cycle {
+  @keyframes cycle {
    0%  { top: 0px; } /* When you start the slide, the first image is already visible */
    4%  { top: 0px; } /* Original Position */
    16% { top: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
    20% { top: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1 second exit image */
-   21% { top: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
+   21% { top: -325px; opacity: 0; z-index: -1; }
    92% { top: -325px; opacity: 0; z-index: 0; }
    96% { top: -325px; opacity: 0; } /* From 96% to 100% = for 1 second enter image*/
    100%{ top: 0px; opacity: 1; }
@@ -92,20 +83,29 @@ body{
 
 @keyframes cyclefour {
    0%  { top: -325px; opacity: 0; }
-   56% { top: -325px; opacity: 0; }
+   50% { top: -325px; opacity: 0; }
+   56% { top: 0px; opacity: 1; }
    60% { top: 0px; opacity: 1; }
-   64% { top: 0px; opacity: 1; }
-   76% { top: 0px; opacity: 1; z-index: 0; }
-   80% { top: 325px; opacity: 0; z-index: 0; }
-   81% { top: -325px; opacity: 0; z-index: -1; }
+   66% { top: 0px; opacity: 1; z-index: 0; }
+   70% { top: 325px; opacity: 0; z-index: 0; }
+   71% { top: -325px; opacity: 0; z-index: -1; }
    100%{ top: -325px; opacity: 0; z-index: -1; }
 }
 @keyframes cyclefive {
    0%  { top: -325px; opacity: 0; }
-   76% { top: -325px; opacity: 0; }
-   80% { top: 0px; opacity: 1; }
-   84% { top: 0px; opacity: 1; }
-   96% { top: 0px; opacity: 1; z-index: 0; }
+   64% { top: -325px; opacity: 0; }
+   68% { top: 0px; opacity: 1; }
+   76% { top: 0px; opacity: 1; }
+   80% { top: 0px; opacity: 1; z-index: 0; }
+   84% { top: -325px; opacity: 0; z-index: -1; }
+   100%{ top: -325px; opacity: 0; z-index: -1; }
+}
+@keyframes cyclesix {
+   0%  { top: -325px; opacity: 0; }
+   80% { top: -325px; opacity: 0; }
+   88% { top: 0px; opacity: 1; }
+   94% { top: 0px; opacity: 1; }
+   98% { top: 0px; opacity: 1; z-index: 0; }
    100%{ top: 325px; opacity: 0; z-index: 0; }
 }
 
@@ -113,7 +113,7 @@ body{
 
 .progress-bar {
    position: absolute;
-   top: -5px;
+   top: 10px;
    width: 680px;
    height: 5px;
    background: #000;
@@ -141,12 +141,14 @@ body{
 
 #slider .tooltip {
    background: rgba(0,0,0,0.7);
-   width: 300px;
-   height: 60px;
+   width: 200px;
+   height: 100px;
    position: relative;
    bottom: 75px;
-   left: -320px;
+   left: 320px;
 }
+
+
 
 #slider .tooltip h1 {
    color: #fff;
@@ -157,7 +159,7 @@ body{
 }
 
 #slider .tooltip {
-…
+  
    transition: all 0.3s ease-in-out;
 }
 
@@ -165,7 +167,8 @@ body{
 #slider li#second: hover .tooltip,
 #slider li#third: hover .tooltip,
 #slider li#fourth: hover .tooltip,
-#slider li#fifth: hover .tooltip {
+#slider li#fifth: hover .tooltip,
+#slider li#sixth: hover .tooltip{
    left: 0px;
 }
 
@@ -173,3 +176,6 @@ body{
 #slider: hover .progress-bar {
    animation-play-state: paused;
 }
+
+
+

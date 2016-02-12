@@ -1,11 +1,12 @@
 //'use strict';
 var express = require("express")
-var exphbs = require("express-handlebars")
+var exphbs = require("express-handlebars"),
 
-  mysql = require('mysql'), 
+    mysql = require('mysql'), 
     myConnection = require('express-myconnection'),
     bodyParser = require('body-parser'),
-     //products = require('./routes/products');
+    product = require('./routes/products'),
+    session = require('express-session');
   
    app = express();
 
@@ -34,13 +35,39 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-//app.get('/', routes.products);
-//app.get('/', function(req, res) {res.render('products')});
+app.set('trust proxy', 1) // trust first proxy 
+app.use(session({
+  secret: 'lau lo',
+  resave: true,
+  saveUninitialized: false,
+  cookie : {maxAge : 30*60000}
+}))
+
+app.get("/login", function(req, res){
+
+  res.render("login", {layout : false});
+})
+
+app.get("/logout", function(req, res){
+
+  res.render("register", {layout : false});
+})
+
+app.post("/login", product.authUser)
+
+app.get('/register', function(req, res){
+  res.render("register", {layout : false});
+})
+
+app.post("/register", product.register)
 
 app.get('/',function(req,res){
 
-  res.render("blog")
+  res.render("home")
 });
+
+app.get("/admin_panel", product.checkUser, product.adminPanel)
+app.post("/admin_panel/:username", product.checkUser, product.promoteUser)
 
 app.get('/myStore',function(req,res){
 
@@ -60,6 +87,36 @@ app.get('/contact',function(req,res){
 app.get('/subscribe',function(req,res){
 
   res.render("subscribe")
+});
+
+app.get('/womenOutfit',function(req,res){
+
+  res.render("womenOutfit")
+});
+
+app.get('/menOutfit',function(req,res){
+
+  res.render("menOutfit")
+});
+
+app.get('/sheet',function(req,res){
+
+  res.render("sheet")
+});
+
+app.get('/roomDecor',function(req,res){
+
+  res.render("roomDecor")
+});
+
+app.get('/collections',function(req,res){
+
+  res.render("collections")
+});
+
+app.get('/casual',function(req,res){
+
+  res.render("casual")
 });
 
 var server = app.listen(3000, function(){
