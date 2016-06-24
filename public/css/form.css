@@ -1,0 +1,26 @@
+h1 {
+    font-size: 40px;
+    line-height: 44px;
+    padding: 22px 0;
+    text-align: center;
+
+}
+
+div .form-container{
+  float: left;
+    padding: 30px;
+    margin-left: -40px;
+    width: 300px;
+    height: 200px;
+    margin-top: 80px;
+}
+
+
+.one{
+    margin-top: 50px;
+    float: left;
+    height: 200px;
+    width: : 200px;
+    padding: 100px;
+    margin-left: -300px;
+}

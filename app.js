@@ -66,7 +66,11 @@ app.get('/',function(req,res){
   res.render("home")
 });
 
-app.get("/admin_panel", product.checkUser, product.adminPanel)
+//app.get("/admin_panel", product.checkUser, product.adminPanel)
+app.get('/admin_panel',function(req,res){
+
+  res.render("admin_panel")
+});
 app.post("/admin_panel/:username", product.checkUser, product.promoteUser)
 
 app.get('/myStore',function(req,res){
