@@ -15,25 +15,24 @@ var exphbs = require("express-handlebars"),
       user: 'root',
       password: '42926238',
       port: 3306,
-      database: 'mysql'
+      database: 'nelisa_spaza_shop'
 };
 
 
+app.engine("handlebars", exphbs({defaultLayout:"main"}));
+app.set("view engine", "handlebars");
 
-app.engine("handlebars", exphbs({defaultLayout:"main"}))
-app.set("view engine", "handlebars")
-
-app.use("/static", express.static("views"))
-app.use(express.static("public"))
+app.use("/static", express.static("views"));
+app.use(express.static("public"));
 app.use("/static", express.static("."))
 //app.use("/static", express.static("routes"))
 
 //setup middleware
 app.use(myConnection(mysql, dbOptions, 'single'));
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.set('trust proxy', 1) // trust first proxy 
 app.use(session({
@@ -48,12 +47,14 @@ app.get("/login", function(req, res){
   res.render("login", {layout : false});
 })
 
+app.post("/login", product.authUser);
+
 app.get("/logout", function(req, res){
 
   res.render("register", {layout : false});
 })
 
-app.post("/login", product.authUser)
+
 
 app.get('/register', function(req, res){
   res.render("register", {layout : false});
@@ -88,39 +89,64 @@ app.get('/contact',function(req,res){
   res.render("contact")
 });
 
-app.get('/subscribe',function(req,res){
+app.get('/services',function(req,res){
 
-  res.render("subscribe")
+  res.render("services")
 });
 
-app.get('/womenOutfit',function(req,res){
+app.get('/cellAccessories',function(req,res){
 
-  res.render("womenOutfit")
+  res.render("cellAccessories")
 });
 
-app.get('/menOutfit',function(req,res){
+app.get('/cellphones',function(req,res){
 
-  res.render("menOutfit")
+  res.render("cellphones")
 });
 
-app.get('/sheet',function(req,res){
+app.get('/acerLaptop',function(req,res){
 
-  res.render("sheet")
+  res.render("acerLaptop")
 });
 
-app.get('/roomDecor',function(req,res){
+app.get('/allBrandLaptop',function(req,res){
 
-  res.render("roomDecor")
+  res.render("allBrandLaptop")
 });
 
-app.get('/collections',function(req,res){
+app.get('/gadget',function(req,res){
 
-  res.render("collections")
+  res.render("gadget")
 });
 
-app.get('/casual',function(req,res){
+app.get('/myCatalogue',function(req,res){
 
-  res.render("casual")
+  res.render("myCatalogue")
+});
+
+app.get('/promotion',function(req,res){
+
+  res.render("promotion")
+});
+
+app.get('/allBrandCellphone',function(req,res){
+
+  res.render("allBrandCellphone")
+});
+
+app.get('/cellphonesView',function(req,res){
+
+  res.render("cellphonesView")
+});
+
+app.get('/laptops',function(req,res){
+
+  res.render("laptops")
+});
+
+app.get('/surveillance',function(req,res){
+
+  res.render("surveillance")
 });
 
 var server = app.listen(3000, function(){

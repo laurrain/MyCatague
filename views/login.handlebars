@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/styleSheet.css">
     <link rel="stylesheet" type="text/css" href="/css/form.css">
-
     <style>
         body        { padding-top:80px; }
     </style>
@@ -30,22 +29,13 @@
                 <td><a href="/myStore">Stores</a></td>
             </tr>
             <tr>
+                <td><a href="/services">Our services</a></td>
+            </tr>
+            <tr>
                 <td><a href="/contact">Contact</a></td>
             </tr>
         </table>
     </div><br>
-      
-      
-        <!--section class="slideshow">
-       	   <div class="slideshow-container slide">
-    		<img src="../image/images-6.jpeg"/>
-    		<img src="../image/acclaptop.jpg"/>
-    		<img src="../image/oLH5RnTkSI3uLaqx6grea20C0yD53YV0ylbkXq67ol_sgqI50bWp1qdfzZ-jzU1qm2DQUc-t0HWeQnBOdrjHlET2uDvFMEWGYuPWQ1I-9sGQDs_gOSfoCUpt_FiWaLaKYtHSUfOpaVVT5J1M_olgW8MVs1u29AXhi7J3DInZUyc2UcxWS2vM5tcsqrhFgBTP01pLM4d0mpGUMQY=w384-h383-nc.png"/>
-            <img src="../image/AspireSwitch10_SW5-012_sku-preview.png"/>
-  	      </div>
-
-        </section-->
-      
 
 <div id="slideshow">
   <img class="is-active" src="../image/images-6.jpeg" alt="" />
@@ -54,17 +44,15 @@
   <img src="../image/AspireSwitch10_SW5-012_sku-preview.png" alt="" />
   <img src="../image/800px-Three_Surveillance_cameras.jpg" alt="" />
 </div>
-</div>     
-
-
-
+</div>   
+      
+</div>
 <div class="col-sm-6 col-sm-offset-3">
 <div class="nav navbar navbar-default navbar-fixed-top">
-    <a href="/"><h1>Welcome To Stell Value For Cash Store</h1></a>
+    <a href="/"><h1>Welcome To Stell Value For Cash Media</h1></a>
 </div>
 
-
-    <!-- form container -->
+<!--form container-->
     <div class="form-container">
         <!-- form header -->
         <h1 class="form-header heading-color">Sign In</h1>
@@ -72,24 +60,25 @@
         <!-- form content -->
         <form class="form-content"  action="/login" method="POST">
             <fieldset>
-                <input type="text" class="form-control" name="username" placeholder="Username" value="{{username}}"autofocus=""/>
-                <input type="text" class="form-control" name="password" placeholder="Password" value="{{password}}" required="">
+                <input type="text" class="form-control" name="username" placeholder="Username" value="{{username}}" required="" autofocus=""/>
+                <input type="password" class="form-control" name="password" placeholder="Password" value="{{password}}" required="">
                  {{#if message}}
                 <p>{{message}}</p>
-                {{/if}}
+            {{/if}}
                 <input type="submit" value="Submit" class="form-submit-control" />
             </fieldset>
         </form>
         <hr>
 
-			<form class="form-signin" action="/register" method="GET">
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit">
-                                                Register
-                                        </button>
-         		</form>
+            <form class="form-signin" action="/register" method="GET">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        Register
+                    </button>
+                </form>
             </div>
-			</div>
-		</div>
+            </div>
+        </div>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/login.js"></script>
 </body>
+</html-->

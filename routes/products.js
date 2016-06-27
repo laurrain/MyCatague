@@ -46,6 +46,11 @@ exports.authUser = function(req, res, next){
     var userData = JSON.parse(JSON.stringify(req.body)),
         user = userData.username,
         password = userData.password;
+        var input = JSON.parse(JSON.stringify(req.body))
+        var data = {
+                    username : input.username,
+                    password: input.password
+            };
     req.getConnection(function(err, connection){
         if (err) 
             return next(err);
@@ -56,12 +61,14 @@ exports.authUser = function(req, res, next){
             console.log(user+"lui");
             if(results.length > 0){
                 console.log(results + "ok")
-                bcrypt.compare(password, results[0].password, function(err, reply){
-                  console.log(reply + "bien")
+                bcrypt.hash(input.password,10, function(err, hash){
+                            data.password = hash
+                //bcrypt.compare(password, results[0].password, function(err, reply){
+                  //console.log(reply + "bien")
                     if(err)
                         console.log("[!] There was an error with bcrypt.compare() ", err);
-                    if(reply && !results[0].locked){
-                        counter = 0
+                    if(results && !results[0].locked){
+                        counter = 0;
 
                         return res.redirect("/");
                     }
