@@ -7,6 +7,8 @@ var exphbs = require("express-handlebars"),
     bodyParser = require('body-parser'),
     product = require('./routes/products'),
     session = require('express-session');
+
+  var nodemailer = require("nodemailer");
   
    app = express();
 
@@ -147,6 +149,36 @@ app.get('/laptops',function(req,res){
 app.get('/surveillance',function(req,res){
 
   res.render("surveillance")
+});
+
+app.get('/myStore',function(req,res){
+res.sendfile('form-content');
+});
+
+app.get('/send',function(req,res){
+var mailOptions={
+   to : req.query.to,
+   subject : req.query.subject,
+   text : req.query.text
+}
+console.log(mailOptions);
+smtpTransport.sendMail(mailOptions, function(error, response){
+if(error){
+console.log(error);
+res.end("error");
+}else{
+console.log("Message sent: " + response.message);
+res.end("sent");
+}
+});
+});
+
+var smtpTransport = nodemailer.createTransport("SMTP",{
+    service: "Gmail",
+    auth: {
+        user: "revoirtonchoix@gmail.com",
+        pass: "alainsheuwa"
+    }
 });
 
 var server = app.listen(3000, function(){

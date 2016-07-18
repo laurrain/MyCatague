@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 <html id="st">
 <body id="str">
 
@@ -58,15 +60,55 @@
 </div>
 
 <div id="form-container">
-<form class="form-content" action="#" method="post">
+<script>
+$(document).ready(function(){
+    var from,to,subject,text;
+    $("#send_email").click(function(){      
+        to=$("#to").val();
+        subject=$("#subject").val();
+        text=$("#content").val();
+        $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("
+
+Email is been sent at "+to+" . Please check inbox !
+
+");
+        }
+
+});
+    });
+});
+</script>
+
+<script language="javascript">
+$(document).ready(function() {
+    $('#artical_message').val('Enter Your Message Here...')
+        .focus(function(){
+            if($(this.val() == 'Enter Your Message Here...'))
+                $(this).val('');
+        })
+        .blur(function(){
+            if($(this.val() == ''))
+                $(this).val('Enter Your Message Here...');
+        });
+});
+</script>
+<form class="form-content">
     <h2>Order</h2>
         <label for="email">E-mail</label>
         <input name="email" id="email" type="email" required />
         <label for="website">Subject</label>
         <input name="subject" id="subject" type="text" />
         <label for="message">Message</label>
-        <textarea name="message" id="message" required></textarea>
-        <input type="submit" value="Post Your Order" />
+        <!--textarea name="textarea" id="content" type="text" cols="40" rows="5" placeholder="Write what you want to send" required /></textarea-->
+<textarea name="message" cols="60"  rows="5" id="artical_message" onfocus="if (this.value == 'Enter Your Message Here...') this.value = '';" onblur="if(this.value == '')this.value ='Enter Your Message Here...';" placeholder="enter your order..." required /></textarea>
+
+<p align="right"></p><br>
+        <button id="send_email">Send your Order</button>
+        
 </form>
 </div> 
 </body>
