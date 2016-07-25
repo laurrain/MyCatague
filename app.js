@@ -181,7 +181,12 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
     }
 });
 
-var server = app.listen(3000, function(){
+
+var port = process.env.PORT || 5000;
+
+var server = app.listen(port, function(){
+
   console.log("server is running on " + server.address().address + ":" +server.address().port)
 
-})
+});
+
