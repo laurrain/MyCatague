@@ -1,6 +1,6 @@
 {
   "name": "myblog",
-  "repository": "nothing", 
+  "repository": "nothing",
   "version": "0.0.0",
   "description": "Ajax web app",
   "main": "app.js",
@@ -10,12 +10,14 @@
   "author": "Laurrain",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "express": "~4.12.3",
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.9.2",
-    "bcrypt": ">= 0.8.5",
+    "express": "~4.12.3",
     "express-handlebars": "^1.1.0",
     "express-myconnection": "^1.0.4",
+    "express-session": "^1.14.0",
     "mysql": "^2.5.3",
+    "nodemailer": "^2.5.0",
     "prompt": "^0.2.14"
   }
 }
